@@ -1,0 +1,15 @@
+version: '3.12'
+services: 
+  database:
+    image: mongo
+    restart: always 
+    environment: 
+      - "MONGO_INITDB_ROOT_USERNAME=${MONGODB_USERNAME}"
+      - "MONGO_INITDB_ROOT_PASSWORD=${MONGODB_PASSWORD}"
+    ports:
+      - "${MONGODB_PORT}:${MONGODB_PORT}"
+    volumes: 
+      - my_data:/data/db                                                                  
+  
+volumes: 
+  my_data: 

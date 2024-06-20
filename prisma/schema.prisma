@@ -1,0 +1,189 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mongodb"
+  url      = env("DATABASE_URL")
+}
+
+model users {
+  id                           String            @id @default(auto()) @map("_id") @db.ObjectId
+  // avatar                       String?
+  email                        String            @unique
+  name                         String?
+  phone                        String?
+  password                     String?
+  // otp                       String?
+  firstname                    String?
+  username                     String?
+  lastname                     String?
+  gender                       String?
+  agree                        Boolean?
+  date_of_birth                DateTime?
+  createdAt                    DateTime          @default(now())
+  updatedAt                    DateTime          @updatedAt
+  interests                    interests[]
+  experiences                  experience[]
+  groupexperiences             groupexperience[]
+  planExperiences              planExperience[]
+  votes                        vote[]
+  comments                     comment[]
+  saves                        save[]
+  notificationSenders          notification[]   @relation("NotificationSender")
+  notificationReceivers        notification[]   @relation("NotificationReceiver")
+  messageSender                message[]        @relation("MessageSender")
+  messageReceiver              message[]        @relation("MessageReceiver")
+  vehicleOwners              vehicles[]        @relation("VehicleOwner")
+}
+
+model interests {
+  id      String  @id @default(auto()) @map("_id") @db.ObjectId
+  name    String?
+  users   users?  @relation(fields: [usersId], references: [id])
+  usersId String? @db.ObjectId
+}
+
+model groupexperience {
+  id          String       @id @default(auto()) @map("_id") @db.ObjectId
+  name        String?
+  place       String?
+  experiences experience[]
+  users       users?       @relation(fields: [usersId], references: [id])
+  usersId     String?      @db.ObjectId
+}
+
+model experience {
+  id                String           @id @default(auto()) @map("_id") @db.ObjectId
+  name              String?
+  place             String?
+  experience        String?
+  post              String?
+  markerPosition    markerPosition   @relation(fields: [markerPositionId], references: [id])
+  photos            photos[]
+  quickTips         quicktips[]
+  createdAt         DateTime         @default(now())
+  updatedAt         DateTime         @updatedAt
+  markerPositionId  String           @db.ObjectId
+  users             users?           @relation(fields: [usersId], references: [id])
+  usersId           String?          @db.ObjectId
+  groupexperience   groupexperience? @relation(fields: [groupexperienceId], references: [id])
+  groupexperienceId String?          @db.ObjectId
+  planExperience    planExperience?  @relation(fields: [planExperienceId], references: [id])
+  planExperienceId  String?          @db.ObjectId @unique
+  votes             vote[]
+  comments          comment[]
+  type              Boolean          @default(false)
+}
+
+model planExperience {
+  id                  String           @id @default(auto()) @map("_id") @db.ObjectId
+  name                String?
+  place               String?
+  orgExperience       experience?
+  users               users?           @relation(fields: [userId], references: [id])
+  userId              String?          @db.ObjectId
+}
+
+model markerPosition {
+  id         String       @id @default(auto()) @map("_id") @db.ObjectId
+  lat        Float?
+  lng        Float?
+  experience experience[]
+}
+
+model photos {
+  id           String      @id @default(auto()) @map("_id") @db.ObjectId
+  webPath      String?
+  format       String?
+  saved        Boolean?
+  experience   experience? @relation(fields: [experienceId], references: [id])
+  experienceId String?     @db.ObjectId
+}
+
+model quicktips {
+  id           String      @id @default(auto()) @map("_id") @db.ObjectId
+  tip          String?
+  experience   experience? @relation(fields: [experienceId], references: [id])
+  experienceId String?     @db.ObjectId
+}
+
+model vote {
+  id              String          @id @default(auto()) @map("_id") @db.ObjectId
+  experience      experience?     @relation(fields: [experienceId], references: [id])
+  experienceId    String?         @db.ObjectId
+  user            users?          @relation(fields: [userId], references: [id])
+  userId          String?         @db.ObjectId
+}
+
+model comment {
+  id              String          @id @default(auto()) @map("_id") @db.ObjectId
+  content         String?
+  experience      experience?     @relation(fields: [experienceId], references: [id])
+  experienceId    String?         @db.ObjectId
+  user            users?          @relation(fields: [userId], references: [id])
+  userId          String?         @db.ObjectId
+  saves           save[]
+}
+
+model save {
+  id              String          @id @default(auto()) @map("_id") @db.ObjectId
+  comment         comment?        @relation(fields: [commentId], references: [id])
+  commentId       String?         @db.ObjectId
+  user            users?          @relation(fields: [userId], references: [id])
+  userId          String?         @db.ObjectId
+}
+
+model notification {
+  id              String                    @id @default(auto()) @map("_id") @db.ObjectId
+  sender          users?                    @relation("NotificationSender",fields: [senderId], references: [id])
+  senderId        String?                   @db.ObjectId
+  receiver        users?                    @relation("NotificationReceiver",fields: [receiverId], references: [id])
+  receiverId      String?                   @db.ObjectId
+  type            String?                   
+  content         String
+  is_read         Boolean                   @default(false)
+  createdAt       DateTime                  @default(now())
+}
+
+model message {
+  id              String                    @id @default(auto()) @map("_id") @db.ObjectId
+  sender          users                     @relation("MessageSender", fields:[senderId], references: [id])
+  senderId        String                    @db.ObjectId
+  receiver        users                     @relation("MessageReceiver", fields:[receiverId], references: [id])
+  receiverId      String                    @db.ObjectId
+  text            String
+  is_read         Boolean                   @default(false)
+  createdAt       DateTime                  @default(now())
+}
+
+model teltonika {
+  id              String                    @id @default(auto()) @map("_id") @db.ObjectId
+  imei            String                    
+  lat             Float                     @default(0)
+  lng             Float                     @default(0)
+  speed           Float                     @default(0)
+  timestamp       String                    
+  address         String
+  battery         Int                       @default(0)
+  movement        Int                       @default(0)
+  fuel            Int                       @default(0)
+  signal          Int                       @default(0)
+  createdAt       DateTime                  @default(now())
+  vehicle         vehicles                  @relation(fields: [imei], references: [deviceImei])               
+}
+
+model vehicles {
+  id              String                    @id @default(auto()) @map("_id") @db.ObjectId
+  user            users?                    @relation("VehicleOwner", fields:[userId], references: [id])
+  userId          String                    @db.ObjectId
+  vehicleName     String
+  deviceImei      String                    @unique
+  deviceType      String
+  deviceModel     String
+  simNumber       String
+  addClient       String
+  expirateDate    DateTime                  @default(now())
+  createdAt       DateTime                  @default(now())
+  teltonikas      teltonika[]               
+}

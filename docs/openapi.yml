@@ -1,0 +1,152 @@
+openapi: 3.0.0
+info:
+  title: Social Experience App
+  description: Social Experience App API
+  version: '1.0'
+  x-logo:
+    url: logo.png
+    backgroundColor: '#FFFFFF'
+    altText: Example logo
+  termsOfService: https://google.com
+  contact:
+    name: Archift
+    url: https://www.archift.com/support
+    email: hello@archift.com
+  license:
+    name: MIT
+    url: https://es.wikipedia.org/wiki/Licencia_MIT
+servers:
+  - url: http://13.229.84.85:3000
+    description: Main endpoint
+tags:
+  - name: Auth
+  - name: Profile
+paths:
+  /auth/login:
+    post:
+      tags:
+        - Auth
+      summary: login
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              example:
+                email: test03@email.com
+                password: 1234asdf
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+              example:
+                id: 62661119e8a211ba59a21193
+                email: test03@email.com
+                name: test1
+                password: $2b$10$mzDUYwgbX8DnXJCKt9M0ue5jNZ94Y2Aj87Xjs.yCgKkuny2nHr00K
+                otp: 2927
+                createdAt: '2022-04-25T03:10:17.373Z'
+                updatedAt: '2022-04-25T06:38:11.918Z'
+                token: >-
+                  eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyNjYxMTE5ZThhMjExYmE1OWEyMTE5MyIsImlhdCI6MTY1MDg2ODY5MiwiZXhwIjoxNjUwODc1ODkyfQ.4mj1Wdzy-EUZkYdR4TrTNfUWRj9hmhKyTgDVy3egYls
+  /auth/signup:
+    post:
+      tags:
+        - Auth
+      summary: signup
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              example:
+                name: test1
+                email: test06@email.com
+                password: 1234asdf
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+              example:
+                id: 62664213a07b9106d3be64d8
+                email: test06@email.com
+                name: test1
+                password: $2b$10$a1e6Zl//HjCV.lw2Csio5u33tVPVdSzVU/26VSo.xDiV.VyXCDGJ2
+                otp: 9482
+                createdAt: '2022-04-25T06:39:15.134Z'
+                updatedAt: '2022-04-25T06:39:15.134Z'
+                token: >-
+                  eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyNjY0MjEzYTA3YjkxMDZkM2JlNjRkOCIsImlhdCI6MTY1MDg2ODc1NSwiZXhwIjoxNjUwODc1OTU1fQ.HELSnHCszSQ0B_A5DJ-11Uq_nh7_3GeS50vaII53-GE
+  /auth/verify:
+    post:
+      tags:
+        - Auth
+      summary: verify-signup
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              example:
+                otp: 9482
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+              example:
+                message: Successfully verified.
+                id: 62664213a07b9106d3be64d8
+                email: test06@email.com
+                name: test1
+                password: $2b$10$a1e6Zl//HjCV.lw2Csio5u33tVPVdSzVU/26VSo.xDiV.VyXCDGJ2
+                otp: null
+                createdAt: '2022-04-25T06:39:15.134Z'
+                updatedAt: '2022-04-25T06:39:51.656Z'
+                token: >-
+                  eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyNjY0MjEzYTA3YjkxMDZkM2JlNjRkOCIsImlhdCI6MTY1MDg2ODc5MSwiZXhwIjoxNjUwODc1OTkxfQ._DTxdoTgcMMwZ8HpXnzpZulxdCFFwIz-N45pFP7s-HE
+  /api/verify:
+    post:
+      tags:
+        - Profile
+      summary: verify-login
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              example:
+                otp: 2927
+      parameters:
+        - name: x-access-token
+          in: header
+          schema:
+            type: string
+          example: >-
+            eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyNjYxMTE5ZThhMjExYmE1OWEyMTE5MyIsImlhdCI6MTY1MDg2MTgyOCwiZXhwIjoxNjUwODY5MDI4fQ.kAVWm71oWHyXzQeK73OL9FI3lgOytNaArozbn2erbp4
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+              example:
+                message: Successfully verified.
+                id: 62661119e8a211ba59a21193
+                email: test03@email.com
+                name: test1
+                password: $2b$10$mzDUYwgbX8DnXJCKt9M0ue5jNZ94Y2Aj87Xjs.yCgKkuny2nHr00K
+                otp: null
+                createdAt: '2022-04-25T03:10:17.373Z'
+                updatedAt: '2022-04-25T06:40:18.689Z'
+                token: >-
+                  eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyNjYxMTE5ZThhMjExYmE1OWEyMTE5MyIsImlhdCI6MTY1MDg2ODgxOCwiZXhwIjoxNjUwODc2MDE4fQ.OpGYBIKAgde4vFrisfq-K5KTDq7b1H_lYsHcuBixM2o

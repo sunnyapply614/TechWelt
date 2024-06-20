@@ -1,0 +1,29 @@
+{
+  "info": {
+    "title": "Social Experience App",
+    "version": "1.0",
+    "description": "Social Experience App API",
+    "termsOfService": "https://google.com",
+    "license": {
+      "name": "MIT",
+      "url": "https://es.wikipedia.org/wiki/Licencia_MIT"
+    },
+    "contact": {
+      "name": "Archift",
+      "url": "https://www.archift.com/support",
+      "email": "hello@archift.com"
+    },
+    "xLogo": {
+      "url": "logo.png",
+      "backgroundColor": "#FFFFFF",
+      "altText": "Example logo"
+    }
+  },
+  "servers": [
+    {
+      "url": "http://13.229.84.85:3030",
+      "description": "Main endpoint"
+    }
+  ],
+  "responseHeaders": false
+}
