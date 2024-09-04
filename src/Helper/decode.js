@@ -40,7 +40,11 @@ const decoderList = new Object ({
 const unixToTimestamp = (unixtime) => {
     return new Date(unixtime).toISOString();
 }
-
+    constructor(redisClient, socket, apiURL = null){
+        this.redisClient = redisClient
+        this.socket = socket
+        this.apiURL = apiURL
+    }
 /**
  * sum distinct integers
  * @param  {...inetegers} value
