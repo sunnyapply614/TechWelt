@@ -28,10 +28,7 @@ const decoderList = new Object ({
     "bu4" : (pos, rawData) => rawData.readUInt32BE(pos),
     "bu8" : (pos, rawData) => parseInt(rawData.readBigUInt64BE(pos)),
 
-    "bs1" : (pos, rawData) => rawData.readInt8(pos),
-    "bs2" : (pos, rawData) => rawData.readInt16BE(pos),
-    "bs4" : (pos, rawData) => rawData.readInt32BE(pos),
-    "bs8" : (pos, rawData) => parseInt(rawData.readBigInt64BE(pos)),
+
 })
 
 /**
