@@ -54,11 +54,7 @@ const presicion = 10000000.0;
 
 module.exports = class Decode {
     
-    constructor(redisClient, socket, apiURL = null){
-        this.redisClient = redisClient
-        this.socket = socket
-        this.apiURL = apiURL
-    }
+
 
     /**
      * Determine wich of the decoderList function
