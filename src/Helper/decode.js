@@ -15,11 +15,7 @@ const convert8To32Bits = num => {
     return buf
 }
 
-/**
- * compute the diferrence between two dates
- * in seconds
- * @param {datetime} date 
- */
+
 const dateDiff = (date) => (new Date() - new Date(date)) / 1000
 const decoderList = new Object ({
     "bu1" : (pos, rawData) => rawData.readUInt8(pos),
