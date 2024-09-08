@@ -1,5 +1,5 @@
-
-
+const { vehicleSchema, teltonikaSchema, userSchema, ruptelaSchema, alertSchema } = require("../models");
+require('dotenv').config();
 
 module.exports = () => {
   const showAlertList = async (req, res) => {
