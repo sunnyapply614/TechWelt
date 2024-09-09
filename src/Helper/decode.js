@@ -1,9 +1,21 @@
+/*
+ setdigout ?1
+00000000000000140C01050000000C7365746469676F7574203F310100007DB4
+
+setdigout ?0
+00000000000000140C01050000000C7365746469676F7574203F30010000EDB5
+*/
+/**
+ * convert a ineteger 8 bits to 32
+ * @param {integer} num 
+ */
 
 const convert8To32Bits = num => {
     const buf = Buffer.alloc(4)
     buf.writeInt32BE(num,0)
     return buf
 }
+
 /**
  * compute the diferrence between two dates
  * in seconds
