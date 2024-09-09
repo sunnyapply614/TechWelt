@@ -226,5 +226,13 @@ module.exports = class Decode {
      * in unixtime for later validation
      * @param {json} reply 
      */
+     sendCommand(reply){
+        this.socket.write( Buffer.from(reply.command, "hex") )
+        this.redisClient.set("gps_"+this.imei_, JSON.stringify({
+            hasSended : true,
+            command   : reply.command,
+            datetime  : Date.now()
+        }))
+    }
 
 }
