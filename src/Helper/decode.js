@@ -60,11 +60,6 @@ const presicion = 10000000.0;
 module.exports = class Decode {
     
 
-
-    /**
-     * Determine wich of the decoderList function
-     * use to decode
-     */
     bytesDecoder = (type, pos) => decoderList[type](pos, this.rawData_)
 
     /**
