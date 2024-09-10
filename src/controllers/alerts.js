@@ -62,7 +62,5 @@ module.exports = () => {
     }
   };
 
-  return {
-    showAlertList
-  };
+
 };
