@@ -4,11 +4,7 @@ require('dotenv').config();
 module.exports = () => {
   const showAlertList = async (req, res) => {
     try {
-      const userId = req.user.id;
-      const fromDate = req.query.fromDate; // Get from date from query parameter
-      const toDate = req.query.toDate; // Get to date from query parameter
-      const alertType = req.query.alertType; // Get alert type from query parameter
-      const plateNo = req.query.plateNo; // Get plate number from query parameter
+
 
       const admin = await userSchema.findOne({ _id: userId });
       if (!admin) {
