@@ -61,6 +61,7 @@ module.exports = () => {
       res.status(401).send({ message: "Something went wrong" });
     }
   };
-
-
+  return {
+    showAlertList
+  };
 };
