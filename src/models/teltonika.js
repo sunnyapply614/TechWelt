@@ -27,7 +27,12 @@ module.exports = new mongoose.Schema(
 		isChange: { type: Number, default: 0 },
 		command: { type: String },
 		address: { type: String },
-
+		DoorStatus: { type: String, default: 'Closed' },
+		cmdResult: { type: String },
+		cmdResStr: { type: String },
+		trackMode: { type: String },
+		sendCommandDate:{ type: Date},
+		responseCommandDate:{ type: Date},
 	},
 	{ timestamps: true }
 );
