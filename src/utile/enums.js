@@ -1,10 +1,6 @@
 module.exports = () => {
 
-    const cmdStatus = {
-        Queued: 'Queued',
-        Sent: 'Sent',
-        Faild: 'Faild'
-    }
+
 
     const cmdType = {
         EngineOn: "EngineOn",
