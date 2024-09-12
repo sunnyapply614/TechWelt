@@ -4,7 +4,26 @@ module.exports = (router) => {
   const vehicles = require("../controllers/vehicles")
   const cmds = require("../controllers/command")
   
-
+  const {
+    createVehicle,
+    maps,
+    showVehicleList,
+    updateVehicle,
+    removeVehicle,
+    historyVehicle,
+    sendIgnitionCommand,
+    sendResetCommand,
+    sendRestartCommand,
+    saveGeofenseData,
+    updategeofence,
+    deleteVehiclePolygon,
+    getStatus,
+    getResFromDev,
+    setTrackingMode,
+    setLimitSpeed,
+    setLimitFuel,
+    setLimitTemp
+  } = vehicles()
 
   const { sendCmd, showCmd } = cmds()
 
