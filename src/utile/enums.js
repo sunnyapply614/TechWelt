@@ -30,13 +30,7 @@ module.exports = () => {
         DataCodecToUseForDataTransmission: "Data codec to use for data transmission",
         GetverCommandResponse: "getver command response",
 
-        RecordsParameters: "Records Parameters",
-        EnableConnectionOverTLS: "Enable connection over TLS",
-        FirmwareOverTheAirWebService: "Firmware Over The Air web service",
-        NetworkPing: "Network Ping",
-        GprsServerSetup: "GPRS Server Setup",
-        GprsSetup: "GPRS Setup",
-        SecondaryGprsServerSetup: "Secondary GPRS Server Setup",
+
 
         SmsReportSendingParams: "SMS report sending parameters",
         IncomingCallAction: "Incoming call action",
