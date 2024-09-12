@@ -38,7 +38,10 @@ module.exports = () => {
         GprsSetup: "GPRS Setup",
         SecondaryGprsServerSetup: "Secondary GPRS Server Setup",
 
-
+        SmsReportSendingParams: "SMS report sending parameters",
+        IncomingCallAction: "Incoming call action",
+        PhoneNumbers: "Phone Numbers",
+        SmsEventTimeZone: "SMS event Time Zone",
 
         HomeGsmNetwork: "Home GSM Network",
         RoamingGsmNetworkSettings: "Roaming GSM Network Setting",
