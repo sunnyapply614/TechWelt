@@ -27,8 +27,14 @@ module.exports = (router) => {
 
   const { sendCmd, showCmd } = cmds()
 
-
-
+  router.post("/create", createVehicle)//add vehicle
+  router.post("/maps", maps)    //get vehicle list to show on maps
+  router.post("/show", showVehicleList)    //get vehicle list normal
+  router.post("/update", updateVehicle)    //update vehicle
+  router.post("/remove", removeVehicle) //remove vehicle
+  router.post("/removePolygon", deleteVehiclePolygon) // remove vehicle Polygon Item
+  router.post("/history", historyVehicle) //remove vehicle
+  router.post("/status", getStatus) //get vehicle status
 
   router.post("/ignition", sendIgnitionCommand)
   router.post("/reset", sendResetCommand)
