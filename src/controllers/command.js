@@ -133,9 +133,8 @@ module.exports = () => {
                         cmd += ";7008:" + params.phoneNo;
                         cmd += ';8008:' + params.sms;
                         break;
-                    case cmdType.MotionDetection:
-                        cmd += 'setparam 138:' + params.opt;
-                        break;
+
+                        
                     case cmdType.NetworkTimeProtocalServer:
                         cmd += 'setparam 901:' + params.period;
                         cmd += ';902:' + params.server1;
