@@ -520,8 +520,5 @@ module.exports = () => {
         }
     }
 
-    return {
-        sendCmd,
-        showCmd
-    }
+
 }
