@@ -507,7 +507,17 @@ module.exports = () => {
             res.status(401).send({msg: "Error occured.", err: err});
         }
     }
-
+    const showCmd = async (req, res) => {
+        const { devImei } = req.body;
+        console.log(devImei)
+        try {
+            const cmds = await commandSchema.find({deviceImei: devImei})
+            res.status(200).json({msg: "Success", result: cmds})
+        } catch (err) {
+            console.log(err)
+            res.status(400).json({msg: "Error occured.", err: err})
+        }
+    }
 
     return {
         sendCmd,
