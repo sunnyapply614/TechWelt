@@ -519,6 +519,9 @@ module.exports = () => {
             res.status(400).json({msg: "Error occured.", err: err})
         }
     }
-
+    return {
+        sendCmd,
+        showCmd
+    }
 
 }
