@@ -18,8 +18,7 @@ module.exports = () => {
                     status: cmdStatus.Queued
                 });
                 
-                await newCmd.save();
-                return true;
+
             }
         } catch (error) {
             console.log(error);
