@@ -1,4 +1,3 @@
-const { vehicleSchema, teltonikaSchema, userSchema, ruptelaSchema } = require("../models");
 
 const net = require('net');
 const crypto = require('crypto');
