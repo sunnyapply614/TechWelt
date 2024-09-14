@@ -31,8 +31,8 @@ function sendGprsCommand(ipAddress, portNumber, commandId, data) {
     .update(payload)
     .digest();
 
-
-
+  // Set the correct data length in the packet
+  packet.writeUInt32BE(packet.length - 8, 4);
 
   // Send the packet to the device
   socket.write(packet);
