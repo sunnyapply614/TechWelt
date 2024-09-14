@@ -1,12 +1,6 @@
 const { vehicleSchema, teltonikaSchema, userSchema, ruptelaSchema } = require("../models");
 
-const net = require('net');
-const crypto = require('crypto');
-require('dotenv').config();
-const mongoose = require("mongoose");
-const enums = require('../utile/enums')
-const https = require("https");
-const { cmdType } = enums()
+
 
 const getTeltonikaModel = (collectionName) => {
   return (
