@@ -7,7 +7,10 @@ var generator = require("generate-password");
 
 const { userSchema } = require("../models");
 
-
+const baseUrl =
+  process.env.DEV == "Develop"
+    ? process.env.BASE_URL + ":" + process.env.CLIENT_PORT
+    : process.env.BASE_URL;
 
 module.exports = () => {
   const randHex = function (len) {
