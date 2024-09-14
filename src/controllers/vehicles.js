@@ -123,7 +123,25 @@ module.exports = () => {
             let tempObject = vehicles[index];
             tempObject = {
               vehicle: {
-
+                _id: tempObject._id,
+                teltonikas: teltonicaObject[0] ? teltonicaObject[0] : {},
+                userId: tempObject.userId,
+                vehicleName: tempObject.vehicleName,
+                deviceType: tempObject.deviceType,
+                title: tempObject.deviceType,
+                deviceModel: tempObject.deviceModel,
+                simNumber: tempObject.simNumber,
+                expirateDate: tempObject.expirateDate,
+                isVibration: tempObject.isVibration,
+                isMovement: tempObject.isMovement,
+                isStop: tempObject.isStop,
+                isEnterZone: tempObject.isEnterZone,
+                isSortZone: tempObject.isSortZone,
+                isOverspeed: tempObject.isOverspeed,
+                isDetachment: tempObject.isDetachment,
+                createdAt: tempObject.createdAt,
+                updatedAt: tempObject.updatedAt,
+                polygonData: tempObject.polygonData
                 
               }
             }
