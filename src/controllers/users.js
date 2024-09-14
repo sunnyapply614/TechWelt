@@ -27,8 +27,7 @@ module.exports = () => {
 
   const getUsers = async (req, res) => {
     try {
-      const userId = req.user.id;
-      const admin = await userSchema.findOne({ _id: userId });
+
 
       if (admin && admin.role === "Admin") {
         const users = await userSchema.find({});
