@@ -30,19 +30,7 @@ module.exports = () => {
       const userId = req.user.id;
       const admin = await userSchema.findOne({ _id: userId });
 
-      if (admin && admin.role === "Admin") {
-        const users = await userSchema.find({});
-        res.status(200).json({ users });
-      } else if (admin && admin.role === "Manager") {
-        const users = await userSchema.find({ role: "Client" });
-        res.status(200).json({ users });
-      } else {
-        res.status(401).send({ message: "Access Denied" });
-      }
-    } catch (err) {
-      console.log("error", err);
-      res.status(401).send({ message: "Error Occured", error: err });
-    }
+
   };
 
   const addUser = async (req, res) => {
