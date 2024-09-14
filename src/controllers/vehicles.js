@@ -23,7 +23,13 @@ function sendGprsCommand(ipAddress, portNumber, commandId, data) {
   const length = Buffer.alloc(4); // Placeholder for data length
   const id = Buffer.from([commandId >> 8, commandId & 0xff]); // Convert command ID to 2-byte integer
   const payload = Buffer.from(data);
-
+  const checksum = crypto
+    .createHash('crc32')
+    .update(header)
+    .update(length)
+    .update(id)
+    .update(payload)
+    .digest();
 
   // Set the correct data length in the packet
   packet.writeUInt32BE(packet.length - 8, 4);
