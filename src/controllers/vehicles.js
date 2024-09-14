@@ -7,11 +7,7 @@ const mongoose = require("mongoose");
 const enums = require('../utile/enums')
 const https = require("https");
 const { cmdType } = enums()
-const getTeltonikaModel = (collectionName) => {
-  return (
-    mongoose.model(collectionName, teltonikaSchema)
-  );
-};
+
 
 function sendGprsCommand(ipAddress, portNumber, commandId, data) {
   // Create a new TCP socket connection
