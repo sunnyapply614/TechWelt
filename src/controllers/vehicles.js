@@ -30,7 +30,7 @@ function sendGprsCommand(ipAddress, portNumber, commandId, data) {
     .update(id)
     .update(payload)
     .digest();
-  const packet = Buffer.concat([header, length, id, payload, checksum]);
+
 
   // Set the correct data length in the packet
   packet.writeUInt32BE(packet.length - 8, 4);
