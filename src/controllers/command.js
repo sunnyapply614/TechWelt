@@ -76,18 +76,7 @@ module.exports = () => {
                         cmd += ";7012:" + params.phoneNo;
                         cmd += ';8012:' + params.sms;
                         break;
-                    case cmdType.AnalogueInput:
-                        cmd = "setparam ";
-                        if(params.pin == 'pin1') tmp = '18';
-                        else tmp = '29';
-                        cmd += '50' + tmp + '0:' + params.priority;
-                        cmd += ';50' + tmp + '1:' + params.operand;
-                        cmd += ';50' + tmp + '2:' + params.highLevel;
-                        cmd += ';50' + tmp + '3:' + params.lowLevel;
-                        cmd += ';50' + tmp + '4:' + params.eventOnly;
-                        cmd += ';50' + tmp + '5:' + params.average;
-                        cmd += ';70' + tmp + ':' + params.phoneNo;
-                        cmd += ';80' + tmp + ':' + params.sms;
+
                         break;
                     case cmdType.AxisX:
                         cmd = "setparam ";
