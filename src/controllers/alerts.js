@@ -10,7 +10,11 @@ module.exports = () => {
       const alertType = req.query.alertType; // Get alert type from query parameter
       const plateNo = req.query.plateNo; // Get plate number from query parameter
 
-
+      const admin = await userSchema.findOne({ _id: userId });
+      if (!admin) {
+        res.status(401).send('token error!');
+        return;
+      }
 
       let vehicles = [];
       if (admin.role === "Admin" || admin.role === "Manager") {
