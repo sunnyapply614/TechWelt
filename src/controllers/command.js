@@ -54,7 +54,17 @@ module.exports = () => {
                         cmd += ";70" + tmp + ":" + params.phoneNo;
                         cmd += ";80" + tmp + ":" + params.sms;
                         break;
-
+                    case cmdType.BatteryLevel:
+                        cmd = "setparam ";
+                        cmd += '50690:' + params.priority;
+                        cmd += ';50691:' + params.operand;
+                        cmd += ";50692:" + params.highLevel;
+                        cmd += ";50693:" + params.lowLevel;
+                        cmd += ';50694:' + params.eventOnly;
+                        cmd += ';50695:' + params.average;
+                        cmd += ";7243:" + params.phoneNo;
+                        cmd += ';8243:' + params.sms;
+                        break;
                     case cmdType.BatteryVoltage:
                         cmd = "setparam ";
                         cmd += '50120:' + params.priority;
