@@ -45,7 +45,14 @@ module.exports = () => {
                         if(params.din == "din1") tmp = '17'
                         else if(params.din == "din2") tmp = '27'
                         else tmp = '37'
-
+                        cmd += "50" + tmp + "0:" + params.priority;
+                        cmd += ";50" + tmp + "1:" + params.operand;
+                        cmd += ";50" + tmp + "2:" + params.highLevel;
+                        cmd += ";50" + tmp + "3:" + params.lowLevel;
+                        cmd += ";50" + tmp + "4:" + params.eventOnly;
+                        cmd += ";50" + tmp + "5:" + params.average;
+                        cmd += ";70" + tmp + ":" + params.phoneNo;
+                        cmd += ";80" + tmp + ":" + params.sms;
                         break;
                     case cmdType.BatteryLevel:
                         cmd = "setparam ";
