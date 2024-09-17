@@ -46,15 +46,7 @@ module.exports = () => {
 
   const addUser = async (req, res) => {
     const {
-      fname,
-      lname,
-      email,
-      phone,
-      country,
-      address,
-      role,
-      company,
-      image,
+      
     } = req.body;
     const userId = req.user.id;
     if (!(email && fname && lname && userId)) {
