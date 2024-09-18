@@ -9,4 +9,4 @@ const schema = new mongoose.Schema({
     address: {type: String, defalut: ""},
 }, { timestamps: true })
 
-
+module.exports = mongoose.model("Companies", schema)
