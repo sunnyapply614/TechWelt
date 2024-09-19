@@ -7,7 +7,7 @@ module.exports = () => {
   
     const filePath = req.file.path;
   
-
+    res.send({ filePath });
   }
   return { uploadFile }
 }
