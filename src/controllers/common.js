@@ -1,4 +1,4 @@
-const path = require('path');
+
 module.exports = () => {
   const uploadFile = (req, res) => {
     if (!req.file) {
