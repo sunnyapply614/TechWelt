@@ -1,6 +1,4 @@
-const { commandSchema, vehicleSchema } = require('../models')
-const enums = require('../utile/enums')
-const { cmdStatus, cmdType } = enums()
+
 
 module.exports = () => {
 
