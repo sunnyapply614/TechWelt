@@ -1,6 +1,9 @@
 require("dotenv").config()
 
-
+const uuid = require("uuid")
+const aws = require("aws-sdk")
+const multer = require("multer")
+const multerS3 = require("multer-s3")
 
 const { S3_BUCKET, S3_SECRET_ACCESS_KEY, S3_ACCESS_KEY_ID, S3_REGION } = process.env
 aws.config.update({
