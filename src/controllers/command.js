@@ -8,7 +8,8 @@ module.exports = () => {
         try {
             const cmd1 = await commandSchema.findOne({deviceImei: devImei, cmdType: type})
             if (cmd1) {
-
+                await commandSchema.updateOne({deviceImei: devImei, cmdType: type},{$set: {command: cmd}})
+                return true;
             } else {
                 let newCmd = new commandSchema({
                     deviceImei: devImei,
