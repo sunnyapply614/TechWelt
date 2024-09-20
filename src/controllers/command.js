@@ -25,7 +25,8 @@ module.exports = () => {
             return false;
         }
     }
-
+    const sendCmd = async (req, res) => {
+        const { type, params, devImei } = req.body;
 
         let cmd = "";
         try {
