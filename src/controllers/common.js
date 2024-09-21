@@ -5,7 +5,7 @@ module.exports = () => {
       return res.status(400).send('No file.');
     }
   
-
+    const filePath = req.file.path;
   
     res.send({ filePath });
   }
