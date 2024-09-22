@@ -13,8 +13,7 @@ module.exports = () => {
     } = req.body;
         
     if (!(name && username && email && mobile && country_name && address)) {
-      res.status(400).json({ message: "All Input is required" });
-      return;
+
     }
 
     try {      
