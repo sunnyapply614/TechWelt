@@ -7,6 +7,8 @@ module.exports = () => {
   
     res.send({ filePath });
   }
-
+  
+  return { uploadFile }
+  
 }
 
