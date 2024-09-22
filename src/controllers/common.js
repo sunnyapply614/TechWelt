@@ -5,8 +5,6 @@ module.exports = () => {
       return res.status(400).send('No file.');
     }
   
-
-  
     res.send({ filePath });
   }
   return { uploadFile }
