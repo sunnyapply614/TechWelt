@@ -5,7 +5,7 @@ const formData = require("form-data");
 const Mailgun = require("mailgun.js");
 var generator = require("generate-password");
 
-const { userSchema } = require("../models");
+
 
 const baseUrl =
   process.env.DEV == "Develop"
