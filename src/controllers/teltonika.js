@@ -23,7 +23,7 @@ module.exports = () => {
         if (err) {
           console.error("save error:", err);
         }else{
-
+          res.status(200).json({ message:'teltonika data added' })
         }
       });
       
