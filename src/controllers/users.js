@@ -22,7 +22,7 @@ module.exports = () => {
     while (r.length < len) {
       r = r + randHex(len - maxlen);
     }
-
+    return r;
   };
 
   const getUsers = async (req, res) => {
