@@ -5,7 +5,11 @@ module.exports = (router) => {
   const cmds = require("../controllers/command")
   
   const {
-
+    createVehicle,
+    maps,
+    showVehicleList,
+    updateVehicle,
+    removeVehicle,
     historyVehicle,
     sendIgnitionCommand,
     sendResetCommand,
