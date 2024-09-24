@@ -1,8 +1,7 @@
 
 module.exports = (router) => {
   
-  const vehicles = require("../controllers/vehicles")
-  const cmds = require("../controllers/command")
+
   
   const {
     createVehicle,
