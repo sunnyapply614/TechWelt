@@ -8,9 +8,7 @@ const IOvalue = new mongoose.Schema({
 
 module.exports = new mongoose.Schema(
 	{
-		deviceImei: { type: String, require: true },
-		deviceType: { type: String, default: "Ruptela" },
-		deviceModel: { type: String },
+
 		fw_version: { type: String, require: true },
 		transferDate: { type: Date, default: Date.now() },
 		lat: { type: Number, default: 0 },
