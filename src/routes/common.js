@@ -24,7 +24,7 @@ module.exports = (router) => {
 
   const upload = multer({ storage, fileFilter });
 
-  router.post("/uploadAvatar", upload.single('avatar'), uploadFile);
+
 
   return router
 }
