@@ -16,4 +16,3 @@ const schema = new mongoose.Schema({
 	status: { type: Boolean, default: false },
 }, { timestamps: true })
 //role : admin, manager, client
-module.exports = mongoose.model("Users", schema)
