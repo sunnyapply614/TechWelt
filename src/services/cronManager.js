@@ -10,5 +10,5 @@ module.exports = () => {
         await updateSatus();
     }, { scheduled: false }).start();
 
-
+    jobMap.set('deviceStatusUpdateJob', deviceStatusUpdateJob);
 };
