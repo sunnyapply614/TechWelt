@@ -25,7 +25,7 @@ module.exports = (router) => {
     setLimitTemp
   } = vehicles()
 
-
+  const { sendCmd, showCmd } = cmds()
 
   router.post("/create", createVehicle)//add vehicle
   router.post("/maps", maps)    //get vehicle list to show on maps
