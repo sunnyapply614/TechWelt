@@ -49,7 +49,6 @@ function sendGprsCommand(ipAddress, portNumber, commandId, data) {
 
 module.exports = () => {
   const createVehicle = async (req, res) => {
-
     try {
       const {
         vehicleType,
