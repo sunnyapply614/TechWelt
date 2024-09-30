@@ -7,4 +7,4 @@ const schema = new mongoose.Schema({
 	time:{ type: Date, default: Date.now() }
 }, { timestamps: true })
 
-
+module.exports = mongoose.model("Alerts", schema)
