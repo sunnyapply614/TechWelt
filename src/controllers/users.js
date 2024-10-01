@@ -37,7 +37,10 @@ module.exports = () => {
         res.status(200).json({ users });
       } else {
         res.status(401).send({ message: "Access Denied" });
-      }
+      }catch (err) {
+      console.log("error", err);
+      res.status(401).send({ message: "Error Occured", error: err });
+    }
     } 
   };
 
