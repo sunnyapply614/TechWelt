@@ -4,7 +4,7 @@ module.exports = (router) => {
     showAlertList,
   } = alerts()
 
-  router.post("/list", showAlertList)    //get Alert list normal
+
   
   return router
 }
