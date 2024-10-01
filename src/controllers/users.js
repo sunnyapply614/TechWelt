@@ -38,10 +38,7 @@ module.exports = () => {
       } else {
         res.status(401).send({ message: "Access Denied" });
       }
-    } catch (err) {
-      console.log("error", err);
-      res.status(401).send({ message: "Error Occured", error: err });
-    }
+    } 
   };
 
   const addUser = async (req, res) => {
