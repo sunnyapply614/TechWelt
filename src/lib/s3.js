@@ -19,7 +19,8 @@ const upload = multer({
     s3: s3,
     bucket: S3_BUCKET,
     key: function (req, file, cb) {
-
+      const fileExt = file.originalname.split(".").pop()
+      cb(null, [uuid.v4(), fileExt].join("."))
     },
   }),
 })
