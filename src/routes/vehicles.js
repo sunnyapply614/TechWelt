@@ -46,10 +46,7 @@ module.exports = (router) => {
   router.post("/showCommand", showCmd)
   router.post("/getResFromDev", getResFromDev)
 
-  router.post("/trackingMode", setTrackingMode)
-  router.post("/limitSpeed", setLimitSpeed) //set limitspeed vehicle
-  router.post("/limitFuel", setLimitFuel) //set limitspeed vehicle
-  router.post("/limitTemp", setLimitTemp) //set limitspeed vehicle
+
 
   return router
 }
