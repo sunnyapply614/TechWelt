@@ -36,11 +36,7 @@ module.exports = (router) => {
   router.post("/history", historyVehicle) //remove vehicle
   router.post("/status", getStatus) //get vehicle status
 
-  router.post("/ignition", sendIgnitionCommand)
-  router.post("/reset", sendResetCommand)
-  router.post("/restart", sendRestartCommand)
-  router.post("/savegeofence", saveGeofenseData)
-  router.post("/updategeofence", updategeofence)
+
   
   router.post("/sendCommand", sendCmd)
   router.post("/showCommand", showCmd)
