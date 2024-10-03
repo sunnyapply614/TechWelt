@@ -26,8 +26,7 @@ module.exports = () => {
         }
       });      
     } catch (err) {
-      console.log(err)
-      res.status(401).json({ message: "Something went wrong", err })
+
     }
   }
   return { createTeltonika }
