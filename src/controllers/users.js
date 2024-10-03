@@ -57,7 +57,10 @@ module.exports = () => {
       image,
     } = req.body;
     const userId = req.user.id;
-
+    if (!(email && fname && lname && userId)) {
+      res.status(400).json({ message: "All Input is required" });
+      return;
+    }
     
     try {
       const admin = await userSchema.findOne({ _id: userId });
