@@ -2,7 +2,8 @@ const path = require('path');
 const multer = require('multer');
 
 module.exports = (router) => {
-
+  const common = require("../controllers/common");
+  const { uploadFile } = common();
 
   const storage = multer.diskStorage({
     destination: (req, file, cb) => {
