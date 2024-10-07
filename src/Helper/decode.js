@@ -21,8 +21,17 @@ const convert8To32Bits = num => {
  * in seconds
  * @param {datetime} date 
  */
-
-
+const dateDiff = (date) => (new Date() - new Date(date)) / 1000
+const decoderList = new Object ({
+    "bu1" : (pos, rawData) => rawData.readUInt8(pos),
+    "bu2" : (pos, rawData) => rawData.readUInt16BE(pos),
+    "bu4" : (pos, rawData) => rawData.readUInt32BE(pos),
+    "bu8" : (pos, rawData) => parseInt(rawData.readBigUInt64BE(pos)),
+    "bs1" : (pos, rawData) => rawData.readInt8(pos),
+    "bs2" : (pos, rawData) => rawData.readInt16BE(pos),
+    "bs4" : (pos, rawData) => rawData.readInt32BE(pos),
+    "bs8" : (pos, rawData) => parseInt(rawData.readBigInt64BE(pos)),
+})
 
 /**
  * Transform unixtime to iso datetime
