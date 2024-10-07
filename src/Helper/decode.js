@@ -52,8 +52,8 @@ const unixToTimestamp = (unixtime) => {
  */
 const position = (...value) => value.reduce ((a, b) => a + b)
 
-
-
+//use for longitude and latitude calculation
+const presicion = 10000000.0;
 
 module.exports = class Decode {
         /**
