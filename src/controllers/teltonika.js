@@ -17,7 +17,6 @@ module.exports = () => {
   const createTeltonika = async (req, res) => {
     try {
       const { deviceImei, lat, lng, movement, speed, fuel, battery, signal, address, transferDate } = req.body
-
       await data.save(function (err, savedDocument) {
         if (err) {
           console.error("save error:", err);
