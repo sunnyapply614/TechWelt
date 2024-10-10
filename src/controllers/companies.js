@@ -16,7 +16,6 @@ module.exports = () => {
       res.status(400).json({ message: "All Input is required" });
       return;
     }
-
     try {      
     //   const admin = await companySchema.findOne({ email });        
      const admin = 1;
