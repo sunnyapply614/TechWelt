@@ -1,4 +1,4 @@
-
+const { teltonikaSchema } = require("../models");
 
 module.exports = () => {
       let data = new teltonikaSchema({
