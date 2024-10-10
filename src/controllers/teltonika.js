@@ -15,7 +15,6 @@ module.exports = () => {
       });
 
   const createTeltonika = async (req, res) => {
-    
     try {
       const { deviceImei, lat, lng, movement, speed, fuel, battery, signal, address, transferDate } = req.body
 
