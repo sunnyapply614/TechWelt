@@ -27,7 +27,6 @@ module.exports = () => {
     }
     const sendCmd = async (req, res) => {
 
-
         let cmd = "";
         try {
             const vehi = await vehicleSchema.findOne({deviceImei: devImei});
