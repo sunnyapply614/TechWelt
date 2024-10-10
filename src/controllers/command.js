@@ -4,7 +4,27 @@ const { cmdStatus, cmdType } = enums()
 
 module.exports = () => {
 
-
+    const saveToDB = async (devImei, type, cmd) => {
+        try {
+            const cmd1 = await commandSchema.findOne({deviceImei: devImei, cmdType: type})
+            if (cmd1) {
+                await commandSchema.updateOne({deviceImei: devImei, cmdType: type},{$set: {command: cmd}})
+                return true;
+            } else {
+                let newCmd = new commandSchema({
+                    deviceImei: devImei,
+                    cmdType: type,
+                    command: cmd,
+                    status: cmdStatus.Queued
+                });
+                await newCmd.save();
+                return true;
+            }
+        } catch (error) {
+            console.log(error);
+            return false;
+        }
+    }
     const sendCmd = async (req, res) => {
         const { type, params, devImei } = req.body;
 
