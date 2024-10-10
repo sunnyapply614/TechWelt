@@ -17,12 +17,7 @@ module.exports = () => {
         vehicles = await vehicleSchema.find({ addClient: admin.lname });
       }
 
-      let alerts = [];
-      if (admin.role === "Admin" || admin.role === "Manager") {
-        alerts = await alertSchema.find({ userId });
-      } else {
-        alerts = await alertSchema.find({ userId, vehicle: { $in: vehicles.map(v => v._id) } });
-      }
+
 
       // Apply filters
       if (fromDate && toDate) {
