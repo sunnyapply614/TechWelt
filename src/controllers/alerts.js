@@ -25,9 +25,7 @@ module.exports = () => {
       }
 
       // Apply filters
-      if (fromDate && toDate) {
-        alerts = alerts.filter(alert => alert.time >= fromDate && alert.time <= toDate);
-      }
+
       if (alertType) {
         alerts = alerts.filter(alert => alert.alert === alertType);
       }
