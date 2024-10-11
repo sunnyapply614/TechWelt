@@ -1,5 +1,4 @@
-require("dotenv").config();
-const { companySchema } = require("../models");
+
 
 module.exports = () => {
     const addCompany = async (req, res) => {
