@@ -100,11 +100,7 @@ module.exports = () => {
       //const {userId} = req.body
       const userId = req.user.id
       console.log(userId)
-      try {
-        const connectOptions = {
-          useNewUrlParser: true,
-          useUnifiedTopology: true
-        };
+
         const mongoUrl = process.env.DATABASE_TELTONIKA_URL
         var vehicles = await vehicleSchema.find({ userId: userId });
 
