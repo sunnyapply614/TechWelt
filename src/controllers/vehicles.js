@@ -85,8 +85,9 @@ module.exports = () => {
           res.status(200).send({ message: "Vehicle added successfully" })
         }
       }
-
-
+      catch (err) {
+        console.log("error", err);
+      }
 
     } catch (err) {
       console.log(err)
