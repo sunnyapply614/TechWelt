@@ -5,7 +5,10 @@ module.exports = () => {
   const showAlertList = async (req, res) => {
     try {
 
-
+      if (!admin) {
+        res.status(401).send('token error!');
+        return;
+      }
 
       let vehicles = [];
       if (admin.role === "Admin" || admin.role === "Manager") {
