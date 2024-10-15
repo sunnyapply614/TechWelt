@@ -10,7 +10,12 @@ module.exports = () => {
         return;
       }
 
-
+      let vehicles = [];
+      if (admin.role === "Admin" || admin.role === "Manager") {
+        vehicles = await vehicleSchema.find({});
+      } else {
+        vehicles = await vehicleSchema.find({ addClient: admin.lname });
+      }
 
       let alerts = [];
       if (admin.role === "Admin" || admin.role === "Manager") {
