@@ -88,7 +88,11 @@ module.exports = () => {
       catch (err) {
         console.log("error", err);
       }
-
+      try {
+        const connectOptions = {
+          useNewUrlParser: true,
+          useUnifiedTopology: true
+        };
     } catch (err) {
       console.log(err)
       res.status(401).send({ message: "Something went wrong" })
