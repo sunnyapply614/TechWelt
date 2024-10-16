@@ -20,10 +20,7 @@ module.exports = () => {
                 await newCmd.save();
                 return true;
             }
-        } catch (error) {
-            console.log(error);
-            return false;
-        }
+
     }
     const sendCmd = async (req, res) => {
 
