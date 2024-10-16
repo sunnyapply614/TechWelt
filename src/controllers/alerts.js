@@ -8,7 +8,10 @@ module.exports = () => {
         res.status(401).send('token error!');
         return;
       }
-
+      // Apply filters
+      if (fromDate && toDate) {
+        alerts = alerts.filter(alert => alert.time >= fromDate && alert.time <= toDate);
+      }
       let vehicles = [];
       if (admin.role === "Admin" || admin.role === "Manager") {
         vehicles = await vehicleSchema.find({});
