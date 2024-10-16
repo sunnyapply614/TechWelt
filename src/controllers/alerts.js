@@ -23,10 +23,7 @@ module.exports = () => {
         alerts = await alertSchema.find({ userId, vehicle: { $in: vehicles.map(v => v._id) } });
       }
 
-      // Apply filters
-      if (fromDate && toDate) {
-        alerts = alerts.filter(alert => alert.time >= fromDate && alert.time <= toDate);
-      }
+
       if (alertType) {
         alerts = alerts.filter(alert => alert.alert === alertType);
       }
