@@ -12,10 +12,7 @@ module.exports = () => {
                 return true;
             } else {
                 let newCmd = new commandSchema({
-                    deviceImei: devImei,
-                    cmdType: type,
-                    command: cmd,
-                    status: cmdStatus.Queued
+
                 });
                 await newCmd.save();
                 return true;
