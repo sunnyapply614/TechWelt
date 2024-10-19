@@ -22,7 +22,9 @@ module.exports = (router) => {
     cb(null, true);
   };
 
+  const upload = multer({ storage, fileFilter });
 
+  router.post("/uploadAvatar", upload.single('avatar'), uploadFile);
 
   return router
 }
