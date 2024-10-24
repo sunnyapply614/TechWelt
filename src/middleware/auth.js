@@ -8,7 +8,9 @@ const verifyToken = (req, res, next) => {
   }
   
   try {
-
+    const decoded = jwt.verify(token, TOKEN_SECRET)
+    console.log("token decoded:", decoded)
+    req.user = decoded
   } catch (err) {
     console.log(err)
     return res.status(401).send("Invalid Token")
