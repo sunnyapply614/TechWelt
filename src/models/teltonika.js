@@ -8,11 +8,7 @@ const IOvalue = new mongoose.Schema({
 
 module.exports = new mongoose.Schema(
 	{
-		deviceImei: { type: String, require: true },
-		deviceType: { type: String, default: "Teltonika" },
-		deviceModel: { type: String },
-		FW_Version: { type: String, require: true },
-		transferDate: { type: Date, default: Date.now() },
+
 		lat: { type: Number, default: 0 },
 		lng: { type: Number, default: 0 },
 		speed: { type: Number, default: 0 },
