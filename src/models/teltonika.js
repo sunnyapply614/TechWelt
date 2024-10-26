@@ -34,5 +34,5 @@ module.exports = new mongoose.Schema(
 		sendCommandDate:{ type: Date},
 		responseCommandDate:{ type: Date},
 	},
-
+	{ timestamps: true }
 );
