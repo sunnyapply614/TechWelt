@@ -1,10 +1,4 @@
-const mongoose = require("mongoose");
 
-const IOvalue = new mongoose.Schema({
-	dataId: { type: Number, default: 0 },
-	dataValue: { type: Number, default: 0 },
-	dataName: { type: String, default: "" },
-});
 
 module.exports = new mongoose.Schema(
 	{
