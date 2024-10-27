@@ -33,7 +33,7 @@ module.exports = () => {
         alerts = alerts.filter(alert => vehicles.find(v => v._id === alert.vehicle).vehicleNo === plateNo);
       }
 
-
+      let response = [];
       for (const vehicle of vehicles) {
         const filteredAlerts = alerts.filter(alert => alert.vehicle === vehicle._id);
         if(filteredAlerts.length > 0) {
