@@ -14,5 +14,5 @@ module.exports = (router) => {
   router.post("/changeEmail", changeEmail)
   require('./companies')(router);
 
-
+  return router
 }
