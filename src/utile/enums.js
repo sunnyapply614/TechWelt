@@ -7,7 +7,13 @@ module.exports = () => {
     }
 
     const cmdType = {
-
+        EngineOn: "EngineOn",
+        DigitalOutput: "Digital Output",
+        DigitalInput: "Digital Input", 
+        BatteryLevel: "Battery Level",
+        BatteryVoltage: "Battery Voltage",
+        ExternalVoltage: "External Voltage",
+        AnalogueInput: "Analogue Input",
         AxisX: "Axis X",
         AxisY: "Axis Y",
         AxisZ: "Axis Z",
