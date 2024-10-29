@@ -7,7 +7,6 @@ module.exports = () => {
     }
 
     const cmdType = {
-
         EngineOn: "EngineOn",
         DigitalOutput: "Digital Output",
         DigitalInput: "Digital Input", 
