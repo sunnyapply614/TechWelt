@@ -14,7 +14,9 @@ module.exports = () => {
         BatteryVoltage: "Battery Voltage",
         ExternalVoltage: "External Voltage",
         AnalogueInput: "Analogue Input",
-
+        AxisX: "Axis X",
+        AxisY: "Axis Y",
+        AxisZ: "Axis Z",
         MotionDetection: "Motion Detection",
         SleepMode: "Sleep Mode",
         NetworkTimeProtocalServer: "Network Time Protocal Server",
