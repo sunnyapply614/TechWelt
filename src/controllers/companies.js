@@ -29,5 +29,7 @@ module.exports = () => {
       res.status(401).json({ message: "Something went wrong.", err: err });
     }
   };
-
+  return {
+    addCompany,
+  };
 };
