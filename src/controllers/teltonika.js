@@ -1,18 +1,7 @@
 const { teltonikaSchema } = require("../models");
 
 module.exports = () => {
-      let data = new teltonikaSchema({
-        deviceImei: deviceImei,
-        lat: lat,
-        lng: lng,
-        transferDate: transferDate,
-        movement: movement,
-        speed: speed,
-        fuel: fuel,
-        battery: battery,
-        signal: signal,
-        address: address
-      });
+
 
   const createTeltonika = async (req, res) => {
     try {
