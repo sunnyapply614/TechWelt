@@ -15,7 +15,9 @@ const getTeltonikaModel = (collectionName) => {
 };
 
 function sendGprsCommand(ipAddress, portNumber, commandId, data) {
-
+  // Create a new TCP socket connection
+  const socket = net.createConnection(portNumber, ipAddress);
+  const packet = Buffer.concat([header, length, id, payload, checksum]);
   // Generate the packet data
   const header = Buffer.from([0x01, 0x00, 0x00, 0x00]); // Header for FMB120 devices
   const length = Buffer.alloc(4); // Placeholder for data length
