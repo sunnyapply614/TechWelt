@@ -62,7 +62,14 @@ module.exports = () => {
         CrashDetection: "Crash Detection",
         ExcessiveIdlingDetection: "Excessive Idling Detection",
 
-
+        CanParam: "CAN Parameters",
+        ToggleCanControlToOpenUnlockAllDoors: "Tolggle CAN-CONTROL to open unlock all doors",
+        ToggleCanControlToOpenUnlockTrunk: "Tolggle CAN-CONTROL to open unlock trunk",
+        ToggleCanControlToBlockEngine: "Toggle CAN-CONTROL to block engine",
+        LVCANSetup: "LVCAN setup",
+        ToggleCanControlToCloselockAllDoors: "Tolggle CAN-CONTROL to close lock all doors",
+        ToggleCanControlToFlashLights: "Tolggle CAN-CONTROL to flash lights",
+        ToggleCanControlToUnblockEngine: "Toggle CAN-CONTROL to unblock engine",
 
         BluetoothWorkMode: "Bluetooth work mode",
         BLEcommonSetting: "BLE Common Settings",
