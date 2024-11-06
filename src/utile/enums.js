@@ -42,13 +42,7 @@ module.exports = () => {
         PhoneNumbers: "Phone Numbers",
         SmsEventTimeZone: "SMS event Time Zone",
 
-        HomeGsmNetwork: "Home GSM Network",
-        RoamingGsmNetworkSettings: "Roaming GSM Network Setting",
-        UnknownGsmNetwork: "Unknown GSM Network",
-        TripScenarioParam: "Trip Scenario Parameter",
-        Odometer: "Odometer",
-        TrackingOnDemandMode: "Tracking on Demand Mode",
-        TrackingOnDemandTiming: "Tracking on Demand Timing",
+
 
         GreenDriving: "Green Driving",
         OverSpeeding: "OverSpeeding",
