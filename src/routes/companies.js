@@ -5,5 +5,5 @@ module.exports = (router) => {
     } = company()
     router.post("/addCompany", addCompany)
 
-
+    return router
   }
