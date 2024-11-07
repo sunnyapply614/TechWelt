@@ -20,7 +20,7 @@ module.exports = () => {
     //   const admin = await companySchema.findOne({ email });        
      const admin = 1;
       if (!admin) {
-        res.status(400).json({ message: "Already same user exists!" });
+
       } else {
         await addCompany.save();
       }
