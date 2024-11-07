@@ -4,10 +4,7 @@ require('dotenv').config();
 module.exports = () => {
   const showAlertList = async (req, res) => {
     try {
-      if (!admin) {
-        res.status(401).send('token error!');
-        return;
-      }
+
       // Apply filters
       if (fromDate && toDate) {
         alerts = alerts.filter(alert => alert.time >= fromDate && alert.time <= toDate);
