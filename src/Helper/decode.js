@@ -10,11 +10,7 @@ setdigout ?0
  * @param {integer} num 
  */
 
-const convert8To32Bits = num => {
-    const buf = Buffer.alloc(4)
-    buf.writeInt32BE(num,0)
-    return buf
-}
+
 
 /**
  * compute the diferrence between two dates
