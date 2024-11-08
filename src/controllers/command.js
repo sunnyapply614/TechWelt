@@ -65,7 +65,15 @@ module.exports = () => {
                         cmd += ';8243:' + params.sms;
                         break;
                     case cmdType.BatteryVoltage:
-
+                        cmd = "setparam ";
+                        cmd += '50120:' + params.priority;
+                        cmd += ';50121:' + params.operand;
+                        cmd += ";50122:" + params.highLevel;
+                        cmd += ";50123:" + params.lowLevel;
+                        cmd += ';50124:' + params.eventOnly;
+                        cmd += ';50125:' + params.average;
+                        cmd += ";7012:" + params.phoneNo;
+                        cmd += ';8012:' + params.sms;
                         break;
                     case cmdType.AnalogueInput:
                         cmd = "setparam ";
