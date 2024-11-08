@@ -11,7 +11,11 @@ module.exports = () => {
                 await commandSchema.updateOne({deviceImei: devImei, cmdType: type},{$set: {command: cmd}})
                 return true;
             } else {
-
+                let newCmd = new commandSchema({
+                    deviceImei: devImei,
+                    cmdType: type,
+                    command: cmd,
+                    status: cmdStatus.Queued
                 });
                 await newCmd.save();
                 return true;
