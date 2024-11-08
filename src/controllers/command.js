@@ -41,9 +41,7 @@ module.exports = () => {
                         break;
                     case cmdType.DigitalInput:
                         cmd = "setparam ";
-                        if(params.din == "din1") tmp = '17'
-                        else if(params.din == "din2") tmp = '27'
-                        else tmp = '37'
+
                         cmd += "50" + tmp + "0:" + params.priority;
                         cmd += ";50" + tmp + "1:" + params.operand;
                         cmd += ";50" + tmp + "2:" + params.highLevel;
