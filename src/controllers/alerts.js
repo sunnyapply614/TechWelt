@@ -38,7 +38,10 @@ module.exports = () => {
         const filteredAlerts = alerts.filter(alert => alert.vehicle === vehicle._id);
         if(filteredAlerts.length > 0) {
           response.push({
-
+            vehicleNo: vehicle.vehicleNo,
+            alerts: filteredAlerts.map(alert => ({
+              alertType: alert.alert, // Assuming 'alert' field holds the alert type
+              time: alert.time
             }))
           });
         }
