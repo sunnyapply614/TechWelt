@@ -14,7 +14,11 @@ module.exports = () => {
       if (fromDate && toDate) {
         alerts = alerts.filter(alert => alert.time >= fromDate && alert.time <= toDate);
       }
-
+      if (admin.role === "Admin" || admin.role === "Manager") {
+        vehicles = await vehicleSchema.find({});
+      } else {
+        vehicles = await vehicleSchema.find({ addClient: admin.lname });
+      }
       let alerts = [];
       if (admin.role === "Admin" || admin.role === "Manager") {
         alerts = await alertSchema.find({ userId });
