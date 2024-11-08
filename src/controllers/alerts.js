@@ -10,7 +10,10 @@ module.exports = () => {
       }
 
       let vehicles = [];
-
+      // Apply filters
+      if (fromDate && toDate) {
+        alerts = alerts.filter(alert => alert.time >= fromDate && alert.time <= toDate);
+      }
       if (admin.role === "Admin" || admin.role === "Manager") {
         vehicles = await vehicleSchema.find({});
       } else {
