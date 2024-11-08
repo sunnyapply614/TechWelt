@@ -25,9 +25,7 @@ module.exports = () => {
       } else {
         alerts = await alertSchema.find({ userId, vehicle: { $in: vehicles.map(v => v._id) } });
       }
-      if (alertType) {
-        alerts = alerts.filter(alert => alert.alert === alertType);
-      }
+
 
       if (plateNo) {
         alerts = alerts.filter(alert => vehicles.find(v => v._id === alert.vehicle).vehicleNo === plateNo);
