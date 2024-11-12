@@ -45,11 +45,7 @@ const unixToTimestamp = (unixtime) => {
         this.socket = socket
         this.apiURL = apiURL
     }
-/**
- * sum distinct integers
- * @param  {...inetegers} value
- * @return {integer} of position of the piece of data needed
- */
+
 const position = (...value) => value.reduce ((a, b) => a + b)
 
 //use for longitude and latitude calculation
