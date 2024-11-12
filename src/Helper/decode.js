@@ -32,7 +32,11 @@ const decoderList = new Object ({
     "bs4" : (pos, rawData) => rawData.readInt32BE(pos),
     "bs8" : (pos, rawData) => parseInt(rawData.readBigInt64BE(pos)),
 })
-
+/**
+ * sum distinct integers
+ * @param  {...inetegers} value
+ * @return {integer} of position of the piece of data needed
+ */
 /**
  * Transform unixtime to iso datetime
  * @param {inetger} unixtime 
