@@ -1,4 +1,6 @@
-
+require('dotenv').config();
+const twilio = require('twilio');
+const client = new twilio(process.env.TWILIOSID, process.env.TWILIOTOKEN)
 
 // const message = async (body, to) => {
 //     try{
