@@ -44,15 +44,7 @@ function sendGprsCommand(ipAddress, portNumber, commandId, data) {
 module.exports = () => {
   const createVehicle = async (req, res) => {
     try {
-      const {
-        vehicleType,
-        vehicleNo,
-        deviceImei,
-        deviceType,
-        deviceModel,
-        camera,
-        mobileNo,
-        addClient } = req.body
+
       const userId = req.user.id
       try {
         const vehicle = await vehicleSchema.findOne({ deviceImei: deviceImei })
