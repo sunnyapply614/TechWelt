@@ -25,7 +25,8 @@ function sendGprsCommand(ipAddress, portNumber, commandId, data) {
   const payload = Buffer.from(data);
   const checksum = crypto
 
-
+  // Set the correct data length in the packet
+  packet.writeUInt32BE(packet.length - 8, 4);
 
   // Send the packet to the device
   socket.write(packet);
