@@ -29,7 +29,7 @@ module.exports = () => {
 
         let cmd = "";
         try {
-
+            const vehi = await vehicleSchema.findOne({deviceImei: devImei});
             if( vehi ) {
                 let tmp = '';
                 switch (type) {
